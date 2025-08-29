@@ -8,215 +8,142 @@
 </head>
 <body>
 
-  <!-- Toolbar -->
+  <!-- Toolbar: radio + label (CSS-only) -->
   <nav class="toolbar">
-    <a href="#home">Home</a>
-    <a href="#sesi-1">Sesi 1</a>
-    <a href="#sesi-2">Sesi 2</a>
-    <a href="#sesi-3">Sesi 3</a>
-    <a href="#sesi-4">Sesi 4</a>
+    <input type="radio" id="tab-home" name="nav" checked>
+    <label for="tab-home">Home</label>
+
+    <input type="radio" id="tab-s1" name="nav">
+    <label for="tab-s1">Sesi 1</label>
+
+    <input type="radio" id="tab-s2" name="nav">
+    <label for="tab-s2">Sesi 2</label>
+
+    <input type="radio" id="tab-s3" name="nav">
+    <label for="tab-s3">Sesi 3</label>
+
+    <input type="radio" id="tab-s4" name="nav">
+    <label for="tab-s4">Sesi 4</label>
   </nav>
 
-  <!-- Hero -->
-  <header class="hero" id="home">
-  <div class="hero__inner">
-    <h1>KSTI 2025</h1>
-    <p>Matriks Peta Jalan Maritim</p>
+  <!-- ================== HOME (HANYA PENYUSUN) ================== -->
+  <section class="page home">
+    <header class="hero">
+      <div class="hero__inner">
+        <h1>KSTI 2025</h1>
+        <p>Matriks Peta Jalan Maritim</p>
 
-    <div class="team-box">
-      <h2>Tim Penyusun</h2>
-      <ul class="team-list">
-        <li>Prof Sjarif</li>
-        <li>Prof Nini</li>
-        <li>dkk</li>
-      </ul>
+        <div class="team-box">
+          <h2>Tim Penyusun</h2>
+          <ul class="team-list">
+            <li>Prof Sjarif</li>
+            <li>Prof Nini</li>
+            <li>dkk</li>
+          </ul>
+        </div>
+      </div>
+    </header>
+  </section>
+
+  <!-- ================== SESI 1 ================== -->
+  <section class="page sesi1">
+    <div class="content">
+      <h2 class="section-title">SESI 1 – IM</h2>
+      <div class="milestone card accent-blue">
+        <div class="milestone-tabs">
+          <!-- tahun -->
+          <input type="radio" id="s1y2025" name="sesi1" checked><label for="s1y2025">2025</label>
+          <input type="radio" id="s1y2026" name="sesi1"><label for="s1y2026">2026</label>
+          <input type="radio" id="s1y2027" name="sesi1"><label for="s1y2027">2027</label>
+          <input type="radio" id="s1y2028" name="sesi1"><label for="s1y2028">2028</label>
+          <input type="radio" id="s1y2029" name="sesi1"><label for="s1y2029">2029</label>
+
+          <!-- panel per tahun: isi 8 bagian -->
+          <div class="panel"><div class="grid8">
+            <article class="item"><div class="item__head"><span class="no">1</span><h3>Permasalahan</h3></div><div class="item__body">…</div></article>
+            <article class="item"><div class="item__head"><span class="no">2</span><h3>Pasar</h3></div><div class="item__body">…</div></article>
+            <article class="item"><div class="item__head"><span class="no">3</span><h3>Industri</h3></div><div class="item__body">…</div></article>
+            <article class="item"><div class="item__head"><span class="no">4</span><h3>Teknologi</h3></div><div class="item__body">…</div></article>
+            <article class="item"><div class="item__head"><span class="no">5</span><h3>SDM</h3></div><div class="item__body">…</div></article>
+            <article class="item"><div class="item__head"><span class="no">6</span><h3>Regulasi</h3></div><div class="item__body">…</div></article>
+            <article class="item"><div class="item__head"><span class="no">7</span><h3><em>Scaling up</em></h3></div><div class="item__body">…</div></article>
+            <article class="item"><div class="item__head"><span class="no">8</span><h3>Lainnya</h3></div><div class="item__body">…</div></article>
+          </div></div>
+
+          <div class="panel"><div class="grid8"><!-- 2026 --> … </div></div>
+          <div class="panel"><div class="grid8"><!-- 2027 --> … </div></div>
+          <div class="panel"><div class="grid8"><!-- 2028 --> … </div></div>
+          <div class="panel"><div class="grid8"><!-- 2029 --> … </div></div>
+        </div>
+      </div>
     </div>
-  </div>
-</header>
+  </section>
 
-  <main class="content">
-
-    <!-- ========== TEMPLATE NOTE ==========
-      Set tahun di setiap Sesi sesuai kebutuhan dengan mengganti label & value di bagian .milestone-tabs.
-      Untuk mengubah isi, cukup edit teks di dalam <div class="item__body">…</div>
-      ===================================== -->
-
-    <!-- SESI 1 -->
-    <section id="sesi-1" class="section card accent-blue">
-      <h2>SESI 1 – IM</h2>
-
-      <div class="milestone">
-        <!-- Tabs Tahun (pakai radio, CSS-only). Ganti/duplikasi jika perlu -->
+  <!-- ================== SESI 2 ================== -->
+  <section class="page sesi2">
+    <div class="content">
+      <h2 class="section-title">SESI 2 – TMM</h2>
+      <div class="milestone card accent-green">
         <div class="milestone-tabs">
-          <!-- name harus unik per sesi; id harus unik per tab -->
-          <input type="radio" id="s1y2025" name="sesi1" checked />
-          <label for="s1y2025">2025</label>
+          <input type="radio" id="s2y2025" name="sesi2" checked><label for="s2y2025">2025</label>
+          <input type="radio" id="s2y2026" name="sesi2"><label for="s2y2026">2026</label>
+          <input type="radio" id="s2y2027" name="sesi2"><label for="s2y2027">2027</label>
+          <input type="radio" id="s2y2028" name="sesi2"><label for="s2y2028">2028</label>
+          <input type="radio" id="s2y2029" name="sesi2"><label for="s2y2029">2029</label>
 
-          <input type="radio" id="s1y2026" name="sesi1" />
-          <label for="s1y2026">2026</label>
-
-          <input type="radio" id="s1y2027" name="sesi1" />
-          <label for="s1y2027">2027</label>
-
-          <input type="radio" id="s1y2028" name="sesi1" />
-          <label for="s1y2028">2028</label>
-
-          <input type="radio" id="s1y2029" name="sesi1" />
-          <label for="s1y2029">2029</label>
-
-          <!-- Panel 2025 -->
-          <div class="panel">
-            <div class="grid8">
-              <article class="item"><div class="item__head"><span class="no">1</span><h3>Permasalahan</h3></div><div class="item__body">Tulis ringkasan permasalahan utama tahun 2025…</div></article>
-              <article class="item"><div class="item__head"><span class="no">2</span><h3>Pasar</h3></div><div class="item__body">Ukuran pasar, segmen prioritas, Go-To-Market awal…</div></article>
-              <article class="item"><div class="item__head"><span class="no">3</span><h3>Industri</h3></div><div class="item__body">Aktivitas industri, mitra potensial, kesiapan galangan/operasional…</div></article>
-              <article class="item"><div class="item__head"><span class="no">4</span><h3>Teknologi</h3></div><div class="item__body">Status TRL/TKT, komponen kunci, target demo/prototipe…</div></article>
-              <article class="item"><div class="item__head"><span class="no">5</span><h3>SDM</h3></div><div class="item__body">Tim inti, kebutuhan kompetensi, pelatihan…</div></article>
-              <article class="item"><div class="item__head"><span class="no">6</span><h3>Regulasi</h3></div><div class="item__body">Standar/sertifikasi, izin uji, kepatuhan…</div></article>
-              <article class="item"><div class="item__head"><span class="no">7</span><h3><em>Scaling up</em></h3></div><div class="item__body">Langkah skala produksi/penerapan, rencana pembiayaan…</div></article>
-              <article class="item"><div class="item__head"><span class="no">8</span><h3>Lainnya</h3></div><div class="item__body">Risiko, mitigasi, catatan penting lainnya…</div></article>
-            </div>
-          </div>
-
-          <!-- Panel 2026 -->
-          <div class="panel">
-            <div class="grid8">
-              <!-- Salin pola yang sama; isi konten 2026 -->
-              <article class="item"><div class="item__head"><span class="no">1</span><h3>Permasalahan</h3></div><div class="item__body">…</div></article>
-              <article class="item"><div class="item__head"><span class="no">2</span><h3>Pasar</h3></div><div class="item__body">…</div></article>
-              <article class="item"><div class="item__head"><span class="no">3</span><h3>Industri</h3></div><div class="item__body">…</div></article>
-              <article class="item"><div class="item__head"><span class="no">4</span><h3>Teknologi</h3></div><div class="item__body">…</div></article>
-              <article class="item"><div class="item__head"><span class="no">5</span><h3>SDM</h3></div><div class="item__body">…</div></article>
-              <article class="item"><div class="item__head"><span class="no">6</span><h3>Regulasi</h3></div><div class="item__body">…</div></article>
-              <article class="item"><div class="item__head"><span class="no">7</span><h3><em>Scaling up</em></h3></div><div class="item__body">…</div></article>
-              <article class="item"><div class="item__head"><span class="no">8</span><h3>Lainnya</h3></div><div class="item__body">…</div></article>
-            </div>
-          </div>
-
-          <!-- Panel 2027 -->
-          <div class="panel"><div class="grid8">
-            <article class="item"><div class="item__head"><span class="no">1</span><h3>Permasalahan</h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">2</span><h3>Pasar</h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">3</span><h3>Industri</h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">4</span><h3>Teknologi</h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">5</span><h3>SDM</h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">6</span><h3>Regulasi</h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">7</span><h3><em>Scaling up</em></h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">8</span><h3>Lainnya</h3></div><div class="item__body">…</div></article>
-          </div></div>
-
-          <!-- Panel 2028 -->
-          <div class="panel"><div class="grid8">
-            <!-- isi 2028 -->
-            <article class="item"><div class="item__head"><span class="no">1</span><h3>Permasalahan</h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">2</span><h3>Pasar</h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">3</span><h3>Industri</h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">4</span><h3>Teknologi</h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">5</span><h3>SDM</h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">6</span><h3>Regulasi</h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">7</span><h3><em>Scaling up</em></h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">8</span><h3>Lainnya</h3></div><div class="item__body">…</div></article>
-          </div></div>
-
-          <!-- Panel 2029 -->
-          <div class="panel"><div class="grid8">
-            <!-- isi 2029 -->
-            <article class="item"><div class="item__head"><span class="no">1</span><h3>Permasalahan</h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">2</span><h3>Pasar</h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">3</span><h3>Industri</h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">4</span><h3>Teknologi</h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">5</span><h3>SDM</h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">6</span><h3>Regulasi</h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">7</span><h3><em>Scaling up</em></h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">8</span><h3>Lainnya</h3></div><div class="item__body">…</div></article>
-          </div></div>
-
+          <div class="panel"><div class="grid8"><!-- 2025 --> … </div></div>
+          <div class="panel"><div class="grid8"><!-- 2026 --> … </div></div>
+          <div class="panel"><div class="grid8"><!-- 2027 --> … </div></div>
+          <div class="panel"><div class="grid8"><!-- 2028 --> … </div></div>
+          <div class="panel"><div class="grid8"><!-- 2029 --> … </div></div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SESI 2 (layout sama, beda nama radio + id label) -->
-    <section id="sesi-2" class="section card accent-green">
-      <h2>SESI 2 – TMM</h2>
-
-      <div class="milestone">
+  <!-- ================== SESI 3 ================== -->
+  <section class="page sesi3">
+    <div class="content">
+      <h2 class="section-title">SESI 3 – TP</h2>
+      <div class="milestone card accent-purple">
         <div class="milestone-tabs">
-          <input type="radio" id="s2y2025" name="sesi2" checked />
-          <label for="s2y2025">2025</label>
-          <input type="radio" id="s2y2026" name="sesi2" />
-          <label for="s2y2026">2026</label>
-          <input type="radio" id="s2y2027" name="sesi2" />
-          <label for="s2y2027">2027</label>
-          <input type="radio" id="s2y2028" name="sesi2" />
-          <label for="s2y2028">2028</label>
-          <input type="radio" id="s2y2029" name="sesi2" />
-          <label for="s2y2029">2029</label>
+          <input type="radio" id="s3y2025" name="sesi3" checked><label for="s3y2025">2025</label>
+          <input type="radio" id="s3y2026" name="sesi3"><label for="s3y2026">2026</label>
+          <input type="radio" id="s3y2027" name="sesi3"><label for="s3y2027">2027</label>
+          <input type="radio" id="s3y2028" name="sesi3"><label for="s3y2028">2028</label>
+          <input type="radio" id="s3y2029" name="sesi3"><label for="s3y2029">2029</label>
 
-          <div class="panel"><div class="grid8">
-            <!-- isi 2025 Sesi 2 -->
-            <article class="item"><div class="item__head"><span class="no">1</span><h3>Permasalahan</h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">2</span><h3>Pasar</h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">3</span><h3>Industri</h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">4</span><h3>Teknologi</h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">5</span><h3>SDM</h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">6</span><h3>Regulasi</h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">7</span><h3><em>Scaling up</em></h3></div><div class="item__body">…</div></article>
-            <article class="item"><div class="item__head"><span class="no">8</span><h3>Lainnya</h3></div><div class="item__body">…</div></article>
-          </div></div>
-
-          <div class="panel"><div class="grid8"><!-- 2026 --><!-- … --></div></div>
-          <div class="panel"><div class="grid8"><!-- 2027 --><!-- … --></div></div>
-          <div class="panel"><div class="grid8"><!-- 2028 --><!-- … --></div></div>
-          <div class="panel"><div class="grid8"><!-- 2029 --><!-- … --></div></div>
+          <div class="panel"><div class="grid8"><!-- 2025 --> … </div></div>
+          <div class="panel"><div class="grid8"><!-- 2026 --> … </div></div>
+          <div class="panel"><div class="grid8"><!-- 2027 --> … </div></div>
+          <div class="panel"><div class="grid8"><!-- 2028 --> … </div></div>
+          <div class="panel"><div class="grid8"><!-- 2029 --> … </div></div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SESI 3 -->
-    <section id="sesi-3" class="section card accent-purple">
-      <h2>SESI 3 – TP</h2>
-      <div class="milestone">
+  <!-- ================== SESI 4 ================== -->
+  <section class="page sesi4">
+    <div class="content">
+      <h2 class="section-title">SESI 4 – IF</h2>
+      <div class="milestone card accent-amber">
         <div class="milestone-tabs">
-          <input type="radio" id="s3y2025" name="sesi3" checked /><label for="s3y2025">2025</label>
-          <input type="radio" id="s3y2026" name="sesi3" /><label for="s3y2026">2026</label>
-          <input type="radio" id="s3y2027" name="sesi3" /><label for="s3y2027">2027</label>
-          <input type="radio" id="s3y2028" name="sesi3" /><label for="s3y2028">2028</label>
-          <input type="radio" id="s3y2029" name="sesi3" /><label for="s3y2029">2029</label>
+          <input type="radio" id="s4y2025" name="sesi4" checked><label for="s4y2025">2025</label>
+          <input type="radio" id="s4y2026" name="sesi4"><label for="s4y2026">2026</label>
+          <input type="radio" id="s4y2027" name="sesi4"><label for="s4y2027">2027</label>
+          <input type="radio" id="s4y2028" name="sesi4"><label for="s4y2028">2028</label>
+          <input type="radio" id="s4y2029" name="sesi4"><label for="s4y2029">2029</label>
 
-          <div class="panel"><div class="grid8"><!-- 2025 --><!-- … --></div></div>
-          <div class="panel"><div class="grid8"><!-- 2026 --><!-- … --></div></div>
-          <div class="panel"><div class="grid8"><!-- 2027 --><!-- … --></div></div>
-          <div class="panel"><div class="grid8"><!-- 2028 --><!-- … --></div></div>
-          <div class="panel"><div class="grid8"><!-- 2029 --><!-- … --></div></div>
+          <div class="panel"><div class="grid8"><!-- 2025 --> … </div></div>
+          <div class="panel"><div class="grid8"><!-- 2026 --> … </div></div>
+          <div class="panel"><div class="grid8"><!-- 2027 --> … </div></div>
+          <div class="panel"><div class="grid8"><!-- 2028 --> … </div></div>
+          <div class="panel"><div class="grid8"><!-- 2029 --> … </div></div>
         </div>
       </div>
-    </section>
-
-    <!-- SESI 4 -->
-    <section id="sesi-4" class="section card accent-amber">
-      <h2>SESI 4 – IF</h2>
-      <div class="milestone">
-        <div class="milestone-tabs">
-          <input type="radio" id="s4y2025" name="sesi4" checked /><label for="s4y2025">2025</label>
-          <input type="radio" id="s4y2026" name="sesi4" /><label for="s4y2026">2026</label>
-          <input type="radio" id="s4y2027" name="sesi4" /><label for="s4y2027">2027</label>
-          <input type="radio" id="s4y2028" name="sesi4" /><label for="s4y2028">2028</label>
-          <input type="radio" id="s4y2029" name="sesi4" /><label for="s4y2029">2029</label>
-
-          <div class="panel"><div class="grid8"><!-- 2025 --><!-- … --></div></div>
-          <div class="panel"><div class="grid8"><!-- 2026 --><!-- … --></div></div>
-          <div class="panel"><div class="grid8"><!-- 2027 --><!-- … --></div></div>
-          <div class="panel"><div class="grid8"><!-- 2028 --><!-- … --></div></div>
-          <div class="panel"><div class="grid8"><!-- 2029 --><!-- … --></div></div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <p>&copy; 2025 Lab DST – ITS</p>
-  </footer>
+    </div>
+  </section>
 
 </body>
 </html>
