@@ -1,125 +1,139 @@
 :root{
-  /* Palet seperti contoh */
-  --navy:#0b3a6b;       /* biru gelap navbar */
-  --navy-2:#0d4b8a;
-  --bg:#f5f7fb;         /* latar lembut */
-  --card:#ffffff;
-  --text:#0f172a;
-  --muted:#5b6b7f;
-  --line:#e6ebf2;
-  --accent:#0ea5e9;     /* aksen tombol/tab tahun */
+  --bg:#f7fafc; --fg:#0f172a; --muted:#475569;
+  --card:#ffffff; --line:#e2e8f0;
+  --blue:#0ea5e9; --green:#22c55e; --purple:#8b5cf6; --amber:#f59e0b;
 }
 
 /* Reset */
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-  background:var(--bg); color:var(--text); line-height:1.6;
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial;
+  background:var(--bg); color:var(--fg); line-height:1.6;
 }
 
-/* Container */
-.container{ max-width:1200px; margin:0 auto; padding:0 1rem; }
-
-/* ===== NAVBAR ===== */
-.navbar{
+/* ===== Toolbar (radio + label, radio disembunyikan) ===== */
+.toolbar{
   position:sticky; top:0; z-index:50;
-  background:var(--navy);
-  box-shadow:0 6px 18px rgba(3,20,40,.25);
-  color:#fff;
+  display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;
+  background:var(--blue); padding:.8rem 1rem;
+  box-shadow:0 2px 10px rgba(14,165,233,.25);
 }
-.nav-inner{
-  display:flex; align-items:center; justify-content:space-between;
-  padding:.85rem 0;
+.toolbar input[type=radio]{ display:none; }            /* <= hilangkan bulatan */
+.toolbar label{
+  color:#fff; cursor:pointer; font-weight:700;
+  padding:.45rem .9rem; border-radius:8px; transition:.2s;
+  user-select:none;
 }
-.brand{ display:flex; align-items:center; gap:.6rem; }
-.brand-logo{ width:44px; height:44px; object-fit:contain; }
-.brand-name{ font-weight:800; letter-spacing:.3px; }
-
-.navmenu input{ display:none; } /* hide radios */
-.navmenu label{
-  color:#eaf3ff; font-weight:600; cursor:pointer; user-select:none;
-  padding:.5rem .9rem; border-radius:10px; margin:0 .15rem;
-  transition:.2s;
-}
-.navmenu label:hover{ background:rgba(255,255,255,.14); }
-.navmenu input:checked + label{
-  background:#fff; color:var(--navy);
+.toolbar label:hover{ background:rgba(255,255,255,.18); }
+.toolbar input[type=radio]:checked + label{
+  background:#fff; color:var(--blue);
 }
 
-/* ===== CARDS ===== */
+/* ===== Page switching (CSS-only, tanpa JS) ===== */
+.page{ display:none; }
+#tab-home:checked ~ .home{ display:block; }
+#tab-s1:checked   ~ .sesi1{ display:block; }
+#tab-s2:checked   ~ .sesi2{ display:block; }
+#tab-s3:checked   ~ .sesi3{ display:block; }
+#tab-s4:checked   ~ .sesi4{ display:block; }
+
+/* ===== Home hero ===== */
+.hero{
+  background:linear-gradient(135deg,#0ea5e9,#38bdf8);
+  color:#fff; border-bottom:1px solid rgba(255,255,255,.35);
+}
+.hero__inner{
+  max-width:900px; margin:0 auto; padding:2.6rem 1rem; text-align:center;
+}
+.hero h1{ margin:0; font-size:2.4rem; letter-spacing:.2px; }
+.hero p{ margin:.35rem 0 0; opacity:.95; }
+.team-box{
+  margin:1.2rem auto 0; max-width:520px;
+  background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.35);
+  border-radius:14px; padding:1rem 1.2rem; backdrop-filter: blur(2px);
+}
+.team-box h2{ margin:.1rem 0 .6rem; font-size:1.05rem; font-weight:800; }
+.team-list{ list-style: disc inside; margin:0; padding:0; text-align:left; line-height:1.75; }
+.team-list li{ font-weight:600; }
+
+/* ===== Session layout ===== */
+.content{ max-width:1200px; margin:1.5rem auto; padding:0 1rem 2rem; }
+.section-title{ margin:.4rem 0 1rem; font-size:1.45rem; }
+
+/* Card aksen */
 .card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:1.1rem 1.2rem;
-  margin:1.1rem 0;
-  box-shadow:0 10px 28px rgba(10,22,50,.06);
+  background:var(--card); border:1px solid var(--line);
+  border-left:8px solid transparent; border-radius:14px;
+  padding:1rem 1.1rem 1.3rem; box-shadow:0 6px 18px rgba(2,8,23,.06);
 }
-.card.centered{ display:flex; align-items:center; justify-content:center; padding:1.6rem; }
-.hero-card{ background:#fff; }
-.hero-logo{ width:100%; max-width:1000px; height:auto; display:block; }
+.accent-blue{  border-left-color:var(--blue); }
+.accent-green{ border-left-color:var(--green); }
+.accent-purple{border-left-color:var(--purple);}
+.accent-amber{ border-left-color:var(--amber); }
 
-/* Titles */
-.title{ margin:.2rem 0 .4rem; font-size:1.6rem; }
-.subtitle{ margin:0; color:var(--muted); }
-
-/* Lists */
-.list{ margin:.2rem 0 0 1rem; line-height:1.9; }
-
-/* ===== YEAR TABS (CSS-only) ===== */
-.year-tabs{ margin-top:.6rem; }
-.year-tabs input{ display:none; }
-.year-tabs label{
+/* ===== Milestone (tab tahun, CSS-only) ===== */
+.milestone{ margin-top:.5rem; }
+.milestone-tabs{ display:grid; gap:.9rem; }
+.milestone-tabs > input{ display:none; }
+.milestone-tabs > label{
   display:inline-block; background:#f1f5f9; color:#0f172a;
-  border:1px solid var(--line); border-radius:999px;
-  padding:.45rem .9rem; margin:.25rem .25rem .6rem 0;
-  font-weight:700; cursor:pointer; transition:.2s;
+  border:1px solid var(--line); border-radius:10px;
+  padding:.5rem .9rem; font-weight:700; cursor:pointer; user-select:none; margin-right:.35rem;
 }
-.year-tabs label:hover{ background:#e9edf3; }
-.year-tabs .panel{
-  display:none; background:#fff; border:1px solid var(--line);
-  border-radius:14px; padding:1rem; box-shadow:0 6px 14px rgba(2,8,23,.05);
+.milestone-tabs > label:hover{ background:#e2e8f0; }
+
+/* Panel konten per tahun */
+.milestone-tabs .panel{
+  display:none; background:#ffffff; border:1px solid var(--line);
+  border-radius:12px; padding:1rem; box-shadow: 0 4px 14px rgba(2,8,23,.04);
 }
 
-/* Tampilkan panel sesuai urutan radio */
-.year-tabs input:nth-of-type(1):checked ~ label:nth-of-type(1),
-.year-tabs input:nth-of-type(2):checked ~ label:nth-of-type(2),
-.year-tabs input:nth-of-type(3):checked ~ label:nth-of-type(3),
-.year-tabs input:nth-of-type(4):checked ~ label:nth-of-type(4),
-.year-tabs input:nth-of-type(5):checked ~ label:nth-of-type(5){
-  background:var(--accent); color:#fff; border-color:var(--accent);
+/* Tampilkan label & panel sesuai urutan radio yang tercentang */
+.milestone-tabs > input:nth-of-type(1):checked ~ label:nth-of-type(1),
+.milestone-tabs > input:nth-of-type(2):checked ~ label:nth-of-type(2),
+.milestone-tabs > input:nth-of-type(3):checked ~ label:nth-of-type(3),
+.milestone-tabs > input:nth-of-type(4):checked ~ label:nth-of-type(4),
+.milestone-tabs > input:nth-of-type(5):checked ~ label:nth-of-type(5){
+  background:#0ea5e9; color:#fff; border-color:#0ea5e9;
 }
-.year-tabs input:nth-of-type(1):checked ~ .panel:nth-of-type(1),
-.year-tabs input:nth-of-type(2):checked ~ .panel:nth-of-type(2),
-.year-tabs input:nth-of-type(3):checked ~ .panel:nth-of-type(3),
-.year-tabs input:nth-of-type(4):checked ~ .panel:nth-of-type(4),
-.year-tabs input:nth-of-type(5):checked ~ .panel:nth-of-type(5){
+.milestone-tabs > input:nth-of-type(1):checked ~ .panel:nth-of-type(1),
+.milestone-tabs > input:nth-of-type(2):checked ~ .panel:nth-of-type(2),
+.milestone-tabs > input:nth-of-type(3):checked ~ .panel:nth-of-type(3),
+.milestone-tabs > input:nth-of-type(4):checked ~ .panel:nth-of-type(4),
+.milestone-tabs > input:nth-of-type(5):checked ~ .panel:nth-of-type(5){
   display:block;
 }
 
-/* ===== 8 ITEM GRID ===== */
+/* Grid 8 kotak (Permasalahan–Lainnya) */
 .grid8{
-  display:grid; gap:1rem;
+  display:grid; gap:.9rem;
   grid-template-columns: repeat(2, minmax(0,1fr));
 }
 @media (min-width: 980px){
   .grid8{ grid-template-columns: repeat(4, minmax(0,1fr)); }
 }
 .item{
-  border:1px solid var(--line);
-  border-radius:14px;
-  background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);
-  box-shadow:0 8px 18px rgba(15,30,60,.05);
-  padding:.8rem;
+  border:1px solid var(--line); border-radius:12px; background:#f8fafc;
 }
-.item h3{ margin:0 0 .4rem; font-size:1rem; display:flex; align-items:center; gap:.5rem; }
-.item h3 span{
+.item__head{
+  display:flex; align-items:center; gap:.6rem; padding:.6rem .7rem;
+  border-bottom:1px solid var(--line); background:#fff; border-radius:12px 12px 0 0;
+}
+.no{
   display:inline-flex; align-items:center; justify-content:center;
-  width:28px; height:28px; border-radius:50%;
-  background:var(--accent); color:#fff; font-weight:800;
+  width:28px; height:28px; border-radius:50%; background:#0ea5e9; color:#fff; font-weight:700;
 }
-.item p{ margin:0; color:var(--muted); }
+.item__head h3{ margin:0; font-size:1rem; }
+.item__body{
+  padding:.75rem .85rem; color:var(--muted);
+  min-height:80px; background:linear-gradient(180deg,#ffffff 0%,#f8fafc 100%);
+}
 
-/* ===== PAGES (visibility handled in inline <style> at bottom of HTML) ===== */
-.page{ padding:1rem 0 2rem; }
+/* Fokus aksesibilitas */
+.toolbar label:focus-visible,
+.milestone-tabs > label:focus-visible{
+  outline:3px solid rgba(255,255,255,.7);
+  outline-offset:2px;
+  border-radius:8px;
+}
