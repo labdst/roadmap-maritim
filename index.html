@@ -8,114 +8,59 @@
 </head>
 <body>
 
-  <!-- Global toggles (CSS-only) -->
-  <input type="checkbox" id="navToggle" class="visually-hidden">
-  <input type="checkbox" id="compactToggle" class="visually-hidden">
-  <input type="checkbox" id="darkToggle" class="visually-hidden">
+<header class="hero">
+  <div class="hero__inner">
+    <h1>KSTI 2025</h1>
+    <p>Matriks Peta Jalan Maritim</p>
+  </div>
+</header>
 
-  <!-- Topbar -->
-  <header class="topbar">
-    <div class="topbar__inner">
-      <label for="navToggle" class="btn btn-icon" aria-label="Menu">☰</label>
-      <div class="brand">
-        <span class="brand__title">KSTI 2025</span>
-        <span class="brand__subtitle">Matriks Peta Jalan Maritim</span>
-      </div>
-      <div class="topbar__actions">
-        <label for="compactToggle" class="chip" title="Toggle kepadatan baris">Compact</label>
-        <label for="darkToggle" class="chip" title="Toggle tema gelap">Dark</label>
-      </div>
-    </div>
-  </header>
+<nav class="nav">
+  <a href="#sesi-1">SESI 1 – IM</a>
+  <a href="#sesi-2">SESI 2 – TMM</a>
+  <a href="#sesi-3">SESI 3 – TP</a>
+  <a href="#sesi-4">SESI 4 – IF</a>
+</nav>
 
-  <!-- Sidebar TOC -->
-  <aside class="sidebar">
-    <nav class="toc">
-      <a href="#sesi-1" class="toc__link">SESI 1 – IM</a>
-      <a href="#sesi-2" class="toc__link">SESI 2 – TMM</a>
-      <a href="#sesi-3" class="toc__link">SESI 3 – TP</a>
-      <a href="#sesi-4" class="toc__link">SESI 4 – IF</a>
-    </nav>
-  </aside>
+<main class="content">
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero__inner">
-      <h1>Matriks Peta Jalan Maritim</h1>
-      <p>Ringkasan tiap sesi ditampilkan sebagai kartu berwarna. Klik judul untuk collapse/expand (tanpa JavaScript).</p>
+  <section id="sesi-1" class="card accent-blue">
+    <h2>SESI 1 – IM</h2>
+    <div class="table-wrap">
+      <!-- PASTE tabel sheet SESI 1 di sini -->
+      <table>
+        <thead><tr><th>Kolom A</th><th>Kolom B</th></tr></thead>
+        <tbody><tr><td>Contoh</td><td>Baris</td></tr></tbody>
+      </table>
     </div>
   </section>
 
-  <!-- Main content -->
-  <main class="content">
+  <section id="sesi-2" class="card accent-green">
+    <h2>SESI 2 – TMM</h2>
+    <div class="table-wrap">
+      <!-- PASTE tabel sheet SESI 2 di sini -->
+    </div>
+  </section>
 
-    <!-- Card 1 -->
-    <section id="sesi-1" class="card accent-blue">
-      <details open>
-        <summary>
-          <h2>SESI 1 – IM</h2>
-          <span class="badge">Sheet</span>
-        </summary>
-        <div class="table-wrap">
-          <!-- PASTE TABLE: ganti blok di bawah ini dengan <table> dari sheet "SESI 1 - IM" -->
-          <!-- Contoh kecil (hapus saat menempel tabel asli): -->
-          <table>
-            <thead><tr><th>Kolom A</th><th>Kolom B</th></tr></thead>
-            <tbody>
-              <tr><td>Contoh</td><td>Baris</td></tr>
-            </tbody>
-          </table>
-          <!-- END PASTE TABLE -->
-        </div>
-      </details>
-    </section>
+  <section id="sesi-3" class="card accent-purple">
+    <h2>SESI 3 – TP</h2>
+    <div class="table-wrap">
+      <!-- PASTE tabel sheet SESI 3 di sini -->
+    </div>
+  </section>
 
-    <!-- Card 2 -->
-    <section id="sesi-2" class="card accent-green">
-      <details open>
-        <summary>
-          <h2>SESI 2 – TMM</h2>
-          <span class="badge">Sheet</span>
-        </summary>
-        <div class="table-wrap">
-          <!-- PASTE TABLE: sheet "SESI 2 - TMM" -->
-          <!-- ... -->
-        </div>
-      </details>
-    </section>
+  <section id="sesi-4" class="card accent-amber">
+    <h2>SESI 4 – IF</h2>
+    <div class="table-wrap">
+      <!-- PASTE tabel sheet SESI 4 di sini -->
+    </div>
+  </section>
 
-    <!-- Card 3 -->
-    <section id="sesi-3" class="card accent-purple">
-      <details open>
-        <summary>
-          <h2>SESI 3 – TP</h2>
-          <span class="badge">Sheet</span>
-        </summary>
-        <div class="table-wrap">
-          <!-- PASTE TABLE: sheet "SESI 3 -TP" -->
-          <!-- ... -->
-        </div>
-      </details>
-    </section>
+</main>
 
-    <!-- Card 4 -->
-    <section id="sesi-4" class="card accent-amber">
-      <details open>
-        <summary>
-          <h2>SESI 4 – IF</h2>
-          <span class="badge">Sheet</span>
-        </summary>
-        <div class="table-wrap">
-          <!-- PASTE TABLE: sheet "SESI 4 - IF" -->
-          <!-- ... -->
-        </div>
-      </details>
-    </section>
-
-  </main>
-
-  <!-- Back to top -->
-  <a href="#" class="to-top" aria-label="Kembali ke atas">↑</a>
+<footer class="footer">
+  <p>&copy; 2025 Lab DST – ITS</p>
+</footer>
 
 </body>
 </html>
