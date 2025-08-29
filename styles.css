@@ -5,64 +5,85 @@
   --purple:#8b5cf6; --amber:#f59e0b;
 }
 
-body {
-  margin:0; font-family: "Segoe UI", Arial, sans-serif;
+/* Reset dasar */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: "Segoe UI", Arial, sans-serif;
   background:var(--bg); color:var(--fg);
   line-height:1.6;
 }
 
+/* Toolbar */
+.toolbar{
+  position:sticky; top:0; z-index:50;
+  display:flex; justify-content:center; gap:1.25rem; flex-wrap:wrap;
+  background:var(--blue);
+  padding:.8rem 1rem;
+  box-shadow:0 2px 10px rgba(14,165,233,.25);
+}
+.toolbar a{
+  color:#fff; text-decoration:none; font-weight:700;
+  padding:.35rem .7rem; border-radius:8px; transition:.2s;
+}
+.toolbar a:hover{ background:rgba(255,255,255,.18); }
+
 /* Hero */
-.hero {
-  background: linear-gradient(135deg,#0ea5e9,#38bdf8);
-  color:#fff; padding:2rem 1rem; text-align:center;
+.hero{
+  background:linear-gradient(135deg,#0ea5e9,#38bdf8);
+  color:#fff; border-bottom:1px solid rgba(255,255,255,.35);
 }
-.hero h1 {margin:0; font-size:2.2rem;}
-.hero p {margin:.25rem 0 0;}
-
-/* Nav */
-.nav {
-  display:flex; justify-content:center; flex-wrap:wrap;
-  gap:1rem; background:#fff; border-bottom:1px solid var(--line);
-  padding:.8rem 1rem; position:sticky; top:0; z-index:10;
+.hero__inner{
+  max-width:1200px; margin:0 auto; padding:2.2rem 1rem;
+  text-align:center;
 }
-.nav a {
-  text-decoration:none; color:var(--fg);
-  font-weight:600; padding:.4rem .8rem;
-  border-radius:8px; transition:.2s;
+.hero h1{margin:0; font-size:2.3rem; letter-spacing:.3px;}
+.hero p{margin:.3rem 0 0; opacity:.95}
+
+/* Konten */
+.content{
+  max-width:1200px; margin:1.5rem auto; padding:0 1rem;
 }
-.nav a:hover {background:var(--line);}
 
-/* Content */
-.content {max-width:1200px; margin:1.5rem auto; padding:0 1rem;}
-
-/* Cards */
-.card {
+/* Card per sheet */
+.card{
   background:var(--card); border:1px solid var(--line);
-  border-left:6px solid transparent;
-  border-radius:12px; padding:1rem 1rem 1.2rem;
-  margin:1rem 0; box-shadow:0 3px 10px rgba(0,0,0,.05);
+  border-left:8px solid transparent;
+  border-radius:14px; padding:1rem 1rem 1.2rem;
+  margin:1.1rem 0; box-shadow:0 6px 20px rgba(2,8,23,.06);
 }
-.card h2 {margin-top:0; font-size:1.3rem;}
-.accent-blue {border-left-color:var(--blue);}
-.accent-green {border-left-color:var(--green);}
-.accent-purple {border-left-color:var(--purple);}
-.accent-amber {border-left-color:var(--amber);}
+.card h2{ margin:.1rem 0 .4rem; font-size:1.35rem; }
 
-/* Tables */
-.table-wrap {overflow:auto; margin-top:.8rem;}
-table {width:100%; border-collapse:collapse; min-width:600px;}
-thead th {
-  background:#f3f4f6; text-align:left; padding:.6rem;
-  font-weight:600; border-bottom:2px solid var(--line);
+/* Aksen warna kiri kartu */
+.accent-blue{  border-left-color:var(--blue);   }
+.accent-green{ border-left-color:var(--green);  }
+.accent-purple{border-left-color:var(--purple); }
+.accent-amber{ border-left-color:var(--amber);  }
+
+/* Tabel */
+.table-wrap{ overflow:auto; margin-top:.6rem; }
+table{ width:100%; border-collapse:collapse; min-width:720px; font-size:15px; }
+thead th{
+  background:#f3f4f6; text-align:left; padding:.65rem .6rem;
+  font-weight:700; border-bottom:2px solid var(--line);
+  white-space:nowrap;
 }
-tbody td {
-  padding:.55rem; border-bottom:1px solid var(--line);
+tbody td{
+  padding:.55rem .6rem; border-bottom:1px solid var(--line);
+  vertical-align:top;
 }
-tbody tr:nth-child(odd){background:#fafafa;}
-tbody tr:hover{background:#eef6ff;}
+tbody tr:nth-child(odd){ background:#fafafa; }
+tbody tr:hover{ background:#eef6ff; }
 
 /* Footer */
-.footer {
-  text-align:center; padding:1rem; color:var(--muted);
-  border-top:1px solid var(--line); margin-top:2rem;
+.footer{
+  text-align:center; color:var(--muted);
+  border-top:1px solid var(--line);
+  padding:1rem; margin-top:2rem;
+}
+
+/* Responsif */
+@media (max-width: 680px){
+  .hero h1{ font-size:1.8rem; }
+  table{ min-width:600px; }
 }
