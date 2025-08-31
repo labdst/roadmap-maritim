@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>KSTI 2025 · Matriks Peta Jalan Maritim</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Tambahan ringan agar aktif terlihat */
+    .navbar { display:flex; gap:1rem; padding:12px 16px; align-items:center; }
+    .navbar a {
+      cursor:pointer; text-decoration:none; padding:8px 14px; border-radius:10px;
+      font-weight:600; opacity:.85;
+    }
+    .navbar a.active { outline:2px solid currentColor; opacity:1; }
+    .content-wrap { width:100%; max-width:1200px; margin:16px auto; padding:0 16px; }
+    .content-card { background:#fff; border-radius:16px; box-shadow:0 6px 18px rgba(0,0,0,.07); }
+    .content-card iframe { width:100%; height: calc(100vh - 140px); border:0; border-radius:16px; }
+    /* Dark mode friendly (opsional) */
+    @media (prefers-color-scheme: dark){
+      .content-card { background:#111; box-shadow:0 6px 18px rgba(0,0,0,.35); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Toolbar -->
+  <nav class="navbar">
+    <a data-page="home.html" id="link-home">Home</a>
+    <a data-page="sesi1.html" id="link-s1">Sesi 1</a>
+    <a data-page="sesi2.html" id="link-s2">Sesi 2</a>
+    <a data-page="sesi3.html" id="link-s3">Sesi 3</a>
+    <a data-page="sesi4.html" id="link-s4">Sesi 4</a>
+  </nav>
+
+  <!-- Area konten bermuatan file eksternal -->
+  <div class="content-wrap">
+    <div class="content-card">
+      <iframe id="content" title="KSTI Section"></iframe>
+    </div>
+  </div>
+
+  <!-- Noscript fallback -->
+  <noscript>
+    <div class="content-wrap">
+      <p>JavaScript nonaktif. Buka halaman langsung:</p>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="sesi1.html">Sesi 1</a></li>
+        <li><a href="sesi2.html">Sesi 2</a></li>
+        <li><a href="sesi3.html">Sesi 3</a></li>
+        <li><a href="sesi4.html">Sesi 4</a></li>
+      </ul>
+    </div>
+  </noscript>
+
+  <script>
+    (function(){
+      const links = document.querySelectorAll('.navbar a');
+      const iframe = document.getElementById('content');
+
+      // Peta hash -> file
+      const routes = {
+        '#home': 'home.html',
+        '#s1': 'sesi1.html',
+        '#s2': 'sesi2.html',
+        '#s3': 'sesi3.html',
+        '#s4': 'sesi4.html'
+      };
+
+      function setActive(linkEl){
+        links.forEach(a => a.classList.remove('active'));
+        if (linkEl) linkEl.classList.add('active');
+      }
+
+      function loadFromHash(){
+        const h = location.hash || '#home';
+        const page = routes[h] || 'home.html';
+        iframe.src = page;
+
+        // sinkronkan highlight
+        const mapId = {
+          '#home': 'link-home',
+          '#s1':   'link-s1',
+          '#s2':   'link-s2',
+          '#s3':   'link-s3',
+          '#s4':   'link-s4',
+        };
+        setActive(document.getElementById(mapId[h] || 'link-home'));
+      }
+
+      // Klik toolbar -> ubah hash (biar bisa di-bookmark/back/forward)
+      links.forEach(a => {
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          const page = a.getAttribute('data-page');
+          const hash = {
+            'home.html': '#home',
+            'sesi1.html': '#s1',
+            'sesi2.html': '#s2',
+            'sesi3.html': '#s3',
+            'sesi4.html': '#s4'
+          }[page] || '#home';
+          if (location.hash !== hash) location.hash = hash;
+          else loadFromHash(); // jika klik tab yang sama
+        });
+      });
+
+      window.addEventListener('hashchange', loadFromHash);
+
+      // pertama kali muat
+      loadFromHash();
+    })();
+  </script>
+</body>
+</html>
